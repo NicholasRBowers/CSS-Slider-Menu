@@ -3,31 +3,45 @@
 	<title>
 		Navbar 3
 	</title>
-	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta content='True' name='HandheldFriendly' />
+	<meta content='width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+	<meta name="viewport" content="width=device-width" />
 	<link href="style.css" rel="stylesheet" />
 </head>
+
 <body>
+
 	<input type="checkbox" name="nav" id="nav" />
+
 	<div id="page">
+
+		<!-- Anything in the header tag show in a fixed position at the top of the screen -->
 		<header>
-			Header
+			<h1>Header</h1>
 		</header>
-		<label id="top" for="nav">
-			Navigation
+
+		<!-- navbuttontop is the navigation button, while contentsideoverlay is the transparent label used to let the user return to the content menu from the nav menu by clicking anywhere out of the navigational menu -->
+		<label id="navbuttontop" for="nav">
+			<h6>Navigation</h6>
 		</label>
-		<label id="side" for="nav"></label>
+		<label id="contentsideoverlay" for="nav"></label>
+
+		<!-- Anything in the nav tag shows up in the side navigational bar -->
 		<nav>
 			<ul>
-				<a href="#"><li>Link 1</li></a>
-				<a href="#"><li>Link 2</li></a>
-				<a href="#"><li>Link 3</li></a>
-				<a href="#"><li>Link 4</li></a>
-				<a href="#"><li>Link 5</li></a>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+				<li><a href="#">Link 4</a></li>
+				<li><a href="#">Link 5</a></li>
 			</ul>
 		</nav>
-		<div id="scroll">
+
+		<!-- Area for page content -->
+		<div id="content">
 			This is a scrollable div.
 		</div>
+
 	</div>
 </body>
 </html>
