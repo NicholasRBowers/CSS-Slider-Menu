@@ -1,3 +1,5 @@
+/* This is a very rough stylesheet, it will be built on the HTML5 Boilerplate eventually, but I wanted to keep it simple in order to get it working first */
+/*==|== General =============================================== */
 body, div {
   padding: 0;
   margin: 0; }
@@ -6,93 +8,151 @@ input {
   display: none !important;
   visibility: hidden; }
 
-div#page {
+label {
+  cursor: pointer; }
+
+/*==|== Layout ================================================ */
+#page {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: relative;
   left: 0;
   top: 0; }
 
 header {
   width: 100%;
-  height: 100px;
-  background-color: red;
+  height: 55px;
   position: fixed;
   left: 0;
-  top: 0;
-  text-align: center; }
+  top: 0; }
+  header h1 {
+    margin: auto 0; }
 
-label#top {
+/* Toggle button */
+label#navbuttontop {
   padding: 0;
-  margin: 10px;
+  margin: 7px;
   position: fixed;
   left: 0;
   top: 0;
   width: 30%;
-  height: 80px;
-  text-align: center;
-  cursor: pointer;
-  background-color: yellow; }
+  height: 35px; }
+  label#navbuttontop h6 {
+    margin: auto 0; }
 
-label#side {
-  visibility: hidden;
+/* An invisible label that allows the user to return to the page by clicking anywhere outside of the navigational menu */
+label#contentsideoverlay {
   position: fixed;
   left: 60%;
   top: 0;
-  overflow: auto;
   width: 40%;
-  height: 100%;
-  opacity: 0; }
+  height: 100%; }
 
 nav {
   position: fixed;
   left: -60%;
   top: 0;
-  overflow: auto;
   width: 60%;
   margin: 0;
   padding: 0;
-  height: 100%;
-  background-color: black; }
+  height: 100%; }
+  nav ul, nav li {
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0; }
+  nav a {
+    display: block;
+    float: left;
+    margin: 0;
+    width: 95%;
+    padding: 2.5%; }
+
+	/*
+
+	/* Content area */
+#content {
+  float: left;
+  margin-top: 55px;
+  height: 2000px;
+  /* here to test scrollability */
+  width: 100%;
+  z-index: -1; }
+
+/*==|== Appearance ============================================ */
+header {
+  background: -webkit-linear-gradient(#f41010 0%, #f83333 100%);
+  background: -moz-linear-gradient(#f41010 0%, #f83333 100%);
+  background: -o-linear-gradient(#f41010 0%, #f83333 100%);
+  background: -ms-linear-gradient(#f41010 0%, #f83333 100%);
+  background: linear-gradient(#f41010 0%, #f83333 100%);
+  background: #f41010;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 2px 0 rgba(250, 250, 250, 0.3) inset;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 2px 0 rgba(250, 250, 250, 0.3) inset;
+  -o-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 2px 0 rgba(250, 250, 250, 0.3) inset;
+  -ms-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 2px 0 rgba(250, 250, 250, 0.3) inset;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), 0 2px 0 rgba(250, 250, 250, 0.3) inset;
+  text-align: center; }
+  header h1 {
+    font: 1.5em/55px arial;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); }
+
+label#navbuttontop {
+  text-align: center;
+  border: 3px solid rgba(0, 0, 0, 0.15); }
+  label#navbuttontop h6 {
+    font: 1.2em/35px arial;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); }
+
+label#contentsideoverlay {
+  visibility: hidden;
+  opacity: 0; }
+
+nav {
+  overflow: auto;
+  background-color: #4e4e4e; }
   nav ul {
     list-style: none;
-    background-color: green;
-    margin: 0;
-    padding: 1%;
-    width: 98%;
-    height: 1000px;
-    position: relative;
-    left: 0;
-    top: 0; }
+    background-color: #aeaeae;
+    border: 1px solid #dadada; }
+  nav li {
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #4e4e4e; }
+  nav ul li:first-child {
+    border-top: 0; }
+  nav ul li:last-child {
+    border-bottom: 0; }
+  nav li:hover, nav li:focus, nav li:active {
+    background-color: #b5b5b5; }
   nav a {
     text-decoration: none;
-    color: black;
-    display: block;
-    margin: 5px;
-    background-color: cyan; }
+    color: #fff;
+    font: 1em/1.5em arial;
+    text-shadow: 0 1px 0 black; }
 
+#content {
+  background-color: pink;
+  font: 1em/1.5em arial; }
+
+/* Transitions */
+header, input, label, nav, div {
+  -webkit-transition-duration: 0.7s;
+  -moz-transition-duration: 0.7s;
+  -o-transition-duration: 0.7s;
+  transition-duration: 0.7s; }
+
+/*==|== Sidebar Method Implementation ========================= */
+/* All must be moved separately because of the fixed positioning */
 input[id=nav]:checked + div#page, input[id=nav]:checked + div#page header,
-input[id=nav]:checked + div#page label#top {
+input[id=nav]:checked + div#page label#navbuttontop {
   left: 60% !important;
   overflow: hidden; }
 
 input[id=nav]:checked + div#page nav {
   left: 0 !important; }
 
-input[id=nav]:checked + div#page label#side {
+input[id=nav]:checked + div#page label#contentsideoverlay {
   visibility: visible; }
-
-div#scroll {
-  position: absolute;
-  left: 0;
-  top: 100px;
-  background-color: pink;
-  height: 2000px;
-  width: 100%;
-  z-index: -1; }
-
-header, input, label, nav, div {
-  -webkit-transition-duration: 0.7s;
-  -moz-transition-duration: 0.7s;
-  -o-transition-duration: 0.7s;
-  transition-duration: 0.7s; }
