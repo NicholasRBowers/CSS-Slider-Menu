@@ -2,9 +2,6 @@
 /*==|== Variables ============================================= */
 /*==|== Mixins ================================================ */
 /*==|== General =============================================== */
-body {
-  /*overflow: hidden;*/ }
-
 body, div {
   padding: 0;
   margin: 0; }
@@ -18,13 +15,10 @@ label {
 
 /*==|== Layout ================================================ */
 #page {
+  /* None of this may be needed */
   position: relative;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  /*position: relative;
-  left: 0;
-  top: 0;*/ }
+  height: 100%; }
 
 header {
   -webkit-box-sizing: border-box;
@@ -32,9 +26,7 @@ header {
   box-sizing: border-box;
   width: 100%;
   height: 55px;
-  position: fixed;
-  left: 0;
-  top: 0; }
+  position: fixed; }
   header h1 {
     margin: auto 0; }
 
@@ -42,9 +34,6 @@ header {
 label#navbuttontop {
   padding: 0;
   margin: 7px;
-  /*position: fixed;
-  left: 0;
-  top: 0;*/
   float: left;
   /* This causes us to have to move one less thing when :checked, but pushes the header to the right and brings it off of center */
   width: 30%;
@@ -84,12 +73,17 @@ nav {
 
 /* Content area */
 #content {
+  position: fixed;
   overflow: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   padding-top: 55px;
   height: 100%;
-  /* Here to test scrollability */
   width: 100%;
   z-index: -1; }
+  #content img {
+    width: 100%; }
 
 /*==|== Appearance ============================================ */
 header {
@@ -106,6 +100,7 @@ header {
   text-align: center; }
   header h1 {
     font: 1.5em/55px arial;
+    /* Change with $barheight */
     color: #fff;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); }
 
@@ -114,6 +109,7 @@ label#navbuttontop {
   border: 3px solid rgba(0, 0, 0, 0.15); }
   label#navbuttontop h6 {
     font: 1.2em/35px arial;
+    /* Change with $navlabelheight */
     color: #fff;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5); }
 
@@ -155,9 +151,6 @@ header, nav, div {
 
 /*==|== Sidebar Method Implementation ========================= */
 /* All must be moved separately because of the fixed positioning */
-input[id=nav]:checked + div#page {
-  overflow: hidden; }
-
 input[id=nav]:checked + div#page div#content, input[id=nav]:checked + div#page header {
   left: 60%;
   overflow: hidden; }
