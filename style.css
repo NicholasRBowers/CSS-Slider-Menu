@@ -2,7 +2,8 @@
 /*==|== General =============================================== */
 body, div {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  overflow-x: hidden; }
 
 input {
   display: none !important;
@@ -32,9 +33,11 @@ header {
 label#navbuttontop {
   padding: 0;
   margin: 7px;
-  position: fixed;
+  /*position: fixed;
   left: 0;
-  top: 0;
+  top: 0;*/
+  float: left;
+  /* This causes us to have to move one less thing when :checked, but pushes the header to the right and brings it off of center */
   width: 30%;
   height: 35px; }
   label#navbuttontop h6 {
@@ -52,10 +55,11 @@ nav {
   position: fixed;
   left: -60%;
   top: 0;
+  overflow-y: auto;
   width: 60%;
+  height: 100%;
   margin: 0;
-  padding: 0;
-  height: 100%; }
+  padding: 0; }
   nav ul, nav li {
     display: block;
     float: left;
@@ -69,14 +73,11 @@ nav {
     width: 95%;
     padding: 2.5%; }
 
-	/*
-
-	/* Content area */
+/* Content area */
 #content {
-  float: left;
-  margin-top: 55px;
+  padding-top: 55px;
   height: 2000px;
-  /* here to test scrollability */
+  /* Here to test scrollability */
   width: 100%;
   z-index: -1; }
 
@@ -112,7 +113,6 @@ label#contentsideoverlay {
   opacity: 0; }
 
 nav {
-  overflow: auto;
   background-color: #4e4e4e; }
   nav ul {
     list-style: none;
@@ -138,7 +138,7 @@ nav {
   font: 1em/1.5em arial; }
 
 /* Transitions */
-header, input, label, nav, div {
+header, nav, div {
   -webkit-transition-duration: 0.7s;
   -moz-transition-duration: 0.7s;
   -o-transition-duration: 0.7s;
@@ -146,10 +146,8 @@ header, input, label, nav, div {
 
 /*==|== Sidebar Method Implementation ========================= */
 /* All must be moved separately because of the fixed positioning */
-input[id=nav]:checked + div#page, input[id=nav]:checked + div#page header,
-input[id=nav]:checked + div#page label#navbuttontop {
-  left: 60% !important;
-  overflow: hidden; }
+input[id=nav]:checked + div#page, input[id=nav]:checked + div#page header {
+  left: 60% !important; }
 
 input[id=nav]:checked + div#page nav {
   left: 0 !important; }
