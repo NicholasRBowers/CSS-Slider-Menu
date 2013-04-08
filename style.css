@@ -10,9 +10,6 @@ input {
   display: none !important;
   visibility: hidden; }
 
-label {
-  cursor: pointer; }
-
 /*==|== Layout ================================================ */
 .wrap {
   width: 97%;
@@ -145,6 +142,18 @@ header, nav, div {
   -moz-transition-duration: 0.7s;
   -o-transition-duration: 0.7s;
   transition-duration: 0.7s; }
+
+/*==|== Bugfixes ============================================== */
+	/* The following code may be able to fix Android's mistreatment of the ~ combinator.  Needs testing.
+	body { -webkit-animation: bugfix infinite 1s; }
+
+  @-webkit-keyframes bugfix { 
+    from { padding: 0; } 
+    to { padding: 0; } 
+  }
+  */
+label {
+  cursor: pointer; }
 
 /*==|== Sidebar Method Implementation ========================= */
 /* All must be moved separately because of the fixed positioning */

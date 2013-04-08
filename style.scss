@@ -43,10 +43,6 @@
 		visibility: hidden;
 	}
 
-	label {
-		cursor: pointer;
-	}
-
 /*==|== Layout ================================================ */
 
 	.wrap {
@@ -202,6 +198,21 @@
 	/* Transitions */
 	header, nav, div {
 		@include transition-duration(0.7s);
+	}
+
+/*==|== Bugfixes ============================================== */
+	/* The following code may be able to fix Android's mistreatment of the ~ combinator.  Needs testing.
+	body { -webkit-animation: bugfix infinite 1s; }
+
+  @-webkit-keyframes bugfix { 
+    from { padding: 0; } 
+    to { padding: 0; } 
+  }
+  */
+
+  // Fixes label clickability on mobile Safari
+  label {
+		cursor: pointer;
 	}
 
 /*==|== Sidebar Method Implementation ========================= */
