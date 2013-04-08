@@ -63,12 +63,14 @@ nav {
     width: 100%;
     margin: 0;
     padding: 0; }
-  nav a {
+  nav ul li a {
     display: block;
-    float: left;
+    float: right;
     margin: 0;
     width: 95%;
     padding: 2.5%; }
+  nav ul li ul li a {
+    width: 80%; }
 
 /* Content area */
 #content {
@@ -117,8 +119,7 @@ nav {
   background-color: #4e4e4e; }
   nav ul {
     list-style: none;
-    background-color: #027f93;
-    border: 1px solid #dadada; }
+    background-color: #027f93; }
   nav li {
     border-top: 1px solid #dadada;
     border-bottom: 1px solid #4e4e4e; }

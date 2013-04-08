@@ -103,12 +103,18 @@
 			margin: 0;
 			padding: 0;
 		}
-		a {
-			display: block;
-			float: left;
-			margin: 0;
-			width: 95%;
-			padding: 2.5%;
+		ul li {
+
+			a {
+				display: block;
+				float: right;
+				margin: 0;
+				width: 95%;
+				padding: 2.5%;
+			}
+			ul li a {
+				width: 80%;
+			}
 		}
 	}
 
@@ -164,7 +170,6 @@
 		ul {
 			list-style: none;
 			background-color: $barcolor;
-			border: 1px solid #dadada;
 		}
 		li {
 			border: {
