@@ -14,7 +14,7 @@ To create a CSS-only layout including a scrollable menu that slides out from the
 
 Live Demo
 ---------
-[Embedded JSFiddle Result](http://jsfiddle.net/NicholasRBowers/PPZ8b/embedded/result/)
+[Embedded JSFiddle Result](http://jsfiddle.net/NicholasRBowers/PPZ8b/embedded/result/)  
 [JSFiddle Code](http://jsfiddle.net/NicholasRBowers/PPZ8b/)
 
 Operation Logic
