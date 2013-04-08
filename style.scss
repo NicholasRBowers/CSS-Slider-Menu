@@ -5,17 +5,10 @@
 	$menuwidth: 60%;
 	$barheight: 55px;
 	$navlabelheight: 35px;
-	$barcolor: red;
+	
+	$barcolor: #027f93;
 
 /*==|== Mixins ================================================ */
-	
-	@mixin background-gradient($color) {
-		background: $color;
-		background: -webkit-linear-gradient(top, lighten($color, 25%), $color); 
-   	background:    -moz-linear-gradient(top, lighten($color, 25%), $color);
-   	background:     -ms-linear-gradient(top, lighten($color, 25%), $color);
-   	background:      -o-linear-gradient(top, lighten($color, 25%), $color);
-   }
 
    @mixin box-sizing {
    	-webkit-box-sizing: border-box;
@@ -56,10 +49,10 @@
 
 /*==|== Layout ================================================ */
 
-	#page { /* None of this may be needed */
-		position: relative;
-		width: 100%;
-		height: 100%;
+	.wrap {
+		width: 97%;
+		max-width: 960px;
+		margin: 0 auto;
 	}
 
 	header {
@@ -130,14 +123,15 @@
 		z-index: -1;
 
 		img {
-			width: 100%;
+			display: block;
+			margin: 0 auto;
 		}
 	}
 
 /*==|== Appearance ============================================ */
 
 	header{
-		@include background-gradient($barcolor);
+		background-color: $barcolor;
 		@include box-shadow;
 		text-align: center;
 
@@ -169,7 +163,7 @@
 
 		ul {
 			list-style: none;
-			background-color: #aeaeae;
+			background-color: $barcolor;
 			border: 1px solid #dadada;
 		}
 		li {
@@ -185,7 +179,7 @@
 			border-bottom: 0;
 		}
 		li:hover, li:focus, li:active {
-			background-color: #b5b5b5;
+			background-color: darken($barcolor, 10%);
 		}
 		a {
 			text-decoration: none;
@@ -196,7 +190,7 @@
 	}
 
 	#content {
-		background-color: pink;
+		background-color: lighten($barcolor, 10%);
 		font: 1em/1.5em arial;
 	}
 
@@ -207,16 +201,16 @@
 
 /*==|== Sidebar Method Implementation ========================= */
 	/* All must be moved separately because of the fixed positioning */
-	input[id=nav]:checked + div#page div#content, input[id=nav]:checked + div#page header {
+	input[id=nav]:checked + #page #content, input[id=nav]:checked + #page header {
 		left: $menuwidth;
 		overflow: hidden;
 	}
 
-	input[id=nav]:checked + div#page nav {
+	input[id=nav]:checked + #page nav {
 		width: $menuwidth;
 		overflow: auto;
 	}
 
-	input[id=nav]:checked + div#page label#contentsideoverlay {
+	input[id=nav]:checked + #page label#contentsideoverlay {
 		visibility: visible;
 	}

@@ -14,11 +14,10 @@ label {
   cursor: pointer; }
 
 /*==|== Layout ================================================ */
-#page {
-  /* None of this may be needed */
-  position: relative;
-  width: 100%;
-  height: 100%; }
+.wrap {
+  width: 97%;
+  max-width: 960px;
+  margin: 0 auto; }
 
 header {
   -webkit-box-sizing: border-box;
@@ -83,15 +82,12 @@ nav {
   width: 100%;
   z-index: -1; }
   #content img {
-    width: 100%; }
+    display: block;
+    margin: 0 auto; }
 
 /*==|== Appearance ============================================ */
 header {
-  background: red;
-  background: -webkit-linear-gradient(top, #ff8080, red);
-  background: -moz-linear-gradient(top, #ff8080, red);
-  background: -ms-linear-gradient(top, #ff8080, red);
-  background: -o-linear-gradient(top, #ff8080, red);
+  background-color: #027f93;
   -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 2px 0 rgba(250, 250, 250, 0.3) inset;
   -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 2px 0 rgba(250, 250, 250, 0.3) inset;
   -o-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 2px 0 rgba(250, 250, 250, 0.3) inset;
@@ -121,7 +117,7 @@ nav {
   background-color: #4e4e4e; }
   nav ul {
     list-style: none;
-    background-color: #aeaeae;
+    background-color: #027f93;
     border: 1px solid #dadada; }
   nav li {
     border-top: 1px solid #dadada;
@@ -131,7 +127,7 @@ nav {
   nav ul li:last-child {
     border-bottom: 0; }
   nav li:hover, nav li:focus, nav li:active {
-    background-color: #b5b5b5; }
+    background-color: #015461; }
   nav a {
     text-decoration: none;
     color: #fff;
@@ -139,7 +135,7 @@ nav {
     text-shadow: 0 1px 0 black; }
 
 #content {
-  background-color: pink;
+  background-color: #03aac5;
   font: 1em/1.5em arial; }
 
 /* Transitions */
@@ -151,13 +147,13 @@ header, nav, div {
 
 /*==|== Sidebar Method Implementation ========================= */
 /* All must be moved separately because of the fixed positioning */
-input[id=nav]:checked + div#page div#content, input[id=nav]:checked + div#page header {
+input[id=nav]:checked + #page #content, input[id=nav]:checked + #page header {
   left: 60%;
   overflow: hidden; }
 
-input[id=nav]:checked + div#page nav {
+input[id=nav]:checked + #page nav {
   width: 60%;
   overflow: auto; }
 
-input[id=nav]:checked + div#page label#contentsideoverlay {
+input[id=nav]:checked + #page label#contentsideoverlay {
   visibility: visible; }
